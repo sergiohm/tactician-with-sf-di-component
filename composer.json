@@ -1,0 +1,15 @@
+{
+  "name": "sergiohm/tactician-with-sf-di-component",
+  "description": "Tactician With Symfony DependencyInjection Component",
+  "type": "project",
+  "license": "proprietary",
+  "require": {
+    "php": "^7.2.10",
+    "symfony/yaml": "4.2.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "TacticianSfDi\\": "src/"
+    }
+  }
+}

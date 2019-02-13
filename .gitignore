@@ -1,0 +1,20 @@
+# phpstorm project files
+.idea
+.phpstorm.meta.php
+_ide_helper.php
+
+# netbeans project files
+nbproject/*
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# Mac DS_Store Files
+.DS_Store
+
+# project
+
+/var/log/*
+!var/log/.gitkeep
