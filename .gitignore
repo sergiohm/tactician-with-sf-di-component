@@ -16,5 +16,7 @@ nbproject/*
 
 # project
 
-/var/log/*
+/var/
+/vendor/
+
 !var/log/.gitkeep
