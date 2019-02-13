@@ -6,7 +6,8 @@
   "require": {
     "php": "^7.2.10",
     "symfony/yaml": "4.2.*",
-    "league/tactician": "^1.0"
+    "league/tactician": "^1.0",
+    "symfony/dependency-injection": "^4.2"
   },
   "autoload": {
     "psr-4": {
