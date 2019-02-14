@@ -2,18 +2,11 @@ parameters:
   command_name_extractor.suffix: '.handler'
 
 services:
-  # default configuration for services in *this* file
-  _defaults:
-    autowire: true      # Automatically injects dependencies in your services.
-    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
-    public: false
 
   ## Command Bus
-
   tactician.command_bus:
     class: League\Tactician\CommandBus
     arguments: [['@tactician.middleware.command_handler']]
-    public: true
 
   tactician.middleware.command_handler:
     class: League\Tactician\Handler\CommandHandlerMiddleware
@@ -36,6 +29,5 @@ services:
       - ['@service_container', get]
 
   ## Handlers
-
   TacticianSfDi\Application\FlowsOk\FlowsOkCommand.handler:
     class: TacticianSfDi\Application\FlowsOk\FlowsOk
