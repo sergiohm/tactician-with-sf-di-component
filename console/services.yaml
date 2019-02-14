@@ -1,5 +1,5 @@
 parameters:
-  hola: 'hola mundo desde parameters'
+  command_name_extractor.suffix: '.handler'
 
 services:
   # default configuration for services in *this* file
