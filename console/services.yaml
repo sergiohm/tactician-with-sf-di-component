@@ -24,6 +24,8 @@ services:
 
   app.util.infrastructure.bus.name_extractor.class_name_with_suffix:
     class: TacticianSfDi\Infrastructure\Bus\CommandNameExtractor\ClassWithSuffix
+    arguments:
+      $suffix: '%command_name_extractor.suffix%'
 
   tactician.inflector.handle:
     class: League\Tactician\Handler\MethodNameInflector\HandleInflector
@@ -32,3 +34,8 @@ services:
     class: League\Tactician\Handler\Locator\CallableLocator
     arguments:
       - ['@service_container', get]
+
+  ## Handlers
+
+  TacticianSfDi\Application\FlowsOk\FlowsOkCommand.handler:
+    class: TacticianSfDi\Application\FlowsOk\FlowsOk
