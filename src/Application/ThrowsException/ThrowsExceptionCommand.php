@@ -1,20 +1,20 @@
 <?php
 declare(strict_types=1);
 
-namespace TacticianSfDi\Application\FlowsOk;
+namespace TacticianSfDi\Application\ThrowsException;
 
 use TacticianSfDi\Util\Domain\Bus\Command;
 
 /**
  * Declared dynamically to avoid validations
  */
-class FlowsOkCommand extends Command
+class ThrowsExceptionCommand extends Command
 {
     private $movieTitle;
 
     public function __construct()
     {
-        $this->movieTitle = 'Mary Poppins';
+        $this->movieTitle = 'Blown Away';
     }
 
     public function movieTitle(): string
@@ -24,7 +24,7 @@ class FlowsOkCommand extends Command
 
     public function name(): string
     {
-        return 'flows_ok_command';
+        return 'throws_exception';
     }
 
     public function jsonSerialize()

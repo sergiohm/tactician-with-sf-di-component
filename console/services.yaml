@@ -36,3 +36,5 @@ services:
   ## Handlers
   TacticianSfDi\Application\FlowsOk\FlowsOkCommand.handler:
     class: TacticianSfDi\Application\FlowsOk\FlowsOk
+  TacticianSfDi\Application\ThrowsException\ThrowsExceptionCommand.handler:
+    class: TacticianSfDi\Application\ThrowsException\ThrowsException

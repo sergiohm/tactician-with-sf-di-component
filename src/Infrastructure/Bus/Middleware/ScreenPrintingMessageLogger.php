@@ -28,11 +28,19 @@ class ScreenPrintingMessageLogger implements Middleware
 
         } catch (\Exception $e) {
 
+            $context = [
+                'exception' => [
+                    'message' => $e->getMessage(),
+                    'code' => $e->getCode()
+                    ],
+                'message' => $command instanceof Message ? $command: 'Not a Message',
+            ];
+
             echo $this->serializeLog(
                     new \DateTimeImmutable(),
                     $command instanceof Message ? $command->messageType(): 'Not a Message',
                     'error',
-                    $command instanceof Message ? json_encode($command): 'Not a Message'
+                    json_encode($context)
                 ) . PHP_EOL;
 
             throw $e;
