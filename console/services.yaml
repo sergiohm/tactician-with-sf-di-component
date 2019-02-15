@@ -6,7 +6,7 @@ services:
   ## Command Bus
   tactician.command_bus:
     class: League\Tactician\CommandBus
-    arguments: [['@tactician.middleware.command_handler']]
+    arguments: [['@app.infrastructure.bus.middleware.message_logger', '@tactician.middleware.command_handler']]
 
   tactician.middleware.command_handler:
     class: League\Tactician\Handler\CommandHandlerMiddleware
@@ -27,6 +27,11 @@ services:
     class: League\Tactician\Handler\Locator\CallableLocator
     arguments:
       - ['@service_container', get]
+
+  ## Logging
+
+  app.infrastructure.bus.middleware.message_logger:
+    class: TacticianSfDi\Infrastructure\Bus\Middleware\ScreenPrintingMessageLogger
 
   ## Handlers
   TacticianSfDi\Application\FlowsOk\FlowsOkCommand.handler:

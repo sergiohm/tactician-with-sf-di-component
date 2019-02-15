@@ -14,9 +14,7 @@ try {
     $loader->load('services.yaml');
     $bus = $containerBuilder->get('tactician.command_bus');
 
-    $message = $bus->handle(new FlowsOkCommand());
-
-    echo $message . PHP_EOL;
+    $bus->handle(new FlowsOkCommand());
 
 } catch (\Exception $e) {
     echo $e . PHP_EOL;
