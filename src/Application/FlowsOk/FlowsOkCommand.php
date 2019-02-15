@@ -3,17 +3,35 @@ declare(strict_types=1);
 
 namespace TacticianSfDi\Application\FlowsOk;
 
-class FlowsOkCommand
+use TacticianSfDi\Util\Domain\Bus\Command;
+
+class FlowsOkCommand extends Command
 {
-    private $message;
+    private $movieTitle;
 
     public function __construct()
     {
-        $this->message = 'Mary Poppins';
+        $this->movieTitle = 'Mary Poppins';
     }
 
-    public function message(): string
+    public function movieTitle(): string
     {
-        return $this->message;
+        return $this->movieTitle;
+    }
+
+    public function name(): string
+    {
+        return 'flows_ok_command';
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            'message_type' => $this->messageType(),
+            'name' => $this->name(),
+            'payload' => [
+                'movie_title' => $this->movieTitle()
+            ]
+        ];
     }
 }

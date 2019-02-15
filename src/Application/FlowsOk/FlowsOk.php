@@ -7,6 +7,6 @@ class FlowsOk
 {
     public function handle(FlowsOkCommand $command): string
     {
-        return $command->message();
+        return $command->movieTitle();
     }
 }
